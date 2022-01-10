@@ -1,0 +1,106 @@
+@import "var";
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    background: $blue;
+    height: 100vh;
+    .sun{
+        position: absolute;
+        top: 2%;
+        left: 3%;
+        width: 20vh;
+        height: 20vh;
+        background: rgb(255, 217, 0);
+        border-radius: 50%;
+        box-shadow: 0 0 30px rgb(255, 60, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .slideIn{
+        transform: translateX(-200px);
+        animation: slideIn 3s ease-out forwards;
+    }
+    @keyframes slideIn{
+        100% {transform:translateX(0);}
+    }
+    h1{
+        padding-top: 20vh;
+        font-size: 8em;
+        position: relative;
+        text-align: center;
+        font-weight: bold;
+        text-shadow: 1px 1px 5px black;
+    }
+    .fadeIn{
+        opacity: 0;
+        animation: fadeIn 2s ease-in forwards;
+    }
+    @keyframes fadeIn{
+    100% {opacity: 1;}
+    }
+    .flowers{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+        .flower{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            
+            &_head{
+                height: 15vh;
+                width: 15vh;
+                background: purple;
+                border-radius: 50%;
+                animation: zydi 3s ease-in-out forwards;
+            }
+
+            &_stem{
+                width: 1vh;
+                height: 30vh;
+                max-height: 20vh;
+                background: green;
+                animation: kotas 5s ease-in-out forwards;
+                
+                &::after{
+                    content: "";
+                    margin-left: 1vh;
+                    margin-top: 5vh;
+                    width: 4vh;
+                    height: 5vh;
+                    display: block;
+                    background: green;
+                    border-radius: 20px 0;
+                    animation: lapas 5s ease-in-out forwards;
+                }
+                @keyframes lapas{
+                    0% {width: 0vh;
+                        margin-top: 0;
+                        margin-left: 0;
+                        height: 0;
+                        opacity: 0;}
+                    100% {opacity: 1;}
+                }
+            }
+        }
+        @keyframes kotas{
+            0% {height: 0vh;
+                max-height: 0vh;
+                opacity: 0;}
+            100% {opacity: 1;}
+        }
+    }
+    @keyframes zydi{
+        0% {height: 0vh;
+            width: 0vh;
+            opacity: 0;}
+        100% {opacity: 1;}
+    }
+}
